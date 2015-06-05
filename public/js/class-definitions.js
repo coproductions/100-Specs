@@ -5,324 +5,164 @@
  *
  */
 
-
-/* Step 2
- *
- * Declare a variable named "videogame_system"
- * then assign it to be the value of "Atari"
- *
- */
+var unicorn;
+unicorn = null;
+var videogame_system;
+videogame_system = 'Atari';
 
 
-/* Step 3
- *
- * Declare a variable named "sahara_animal"
- * and assign the value of sahara_animal to "The Addax"
- *
- */
+var sahara_animal = 'The Addax';
 
 
-/* Step 4
- *
- * Declare a variable named "planets"
- * and assign the value of planets to an array containing
- * each planet in our solar system, in order of distance from the sun
- * Capitalize the names.
- */
+var planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus' , 'Neptune'];
 
 
-/* Step 5
- *
- * Declare a variable named "galilean_moons"
- * and assign the value of galilean_moons to an array containing
- * each galilean moon of Jupiter
- *
- */
+var galilean_moons = ['Io', 'Europa', 'Ganymede', 'Callisto']
 
 
-/* Step 6 φ
- *
- * Declare a variable named "golden_ratio"
- * and assign the value of golden_ratio to 1.61803398874
- *
- */
+var golden_ratio = 1.61803398874;
 
 
-/* Step 7
- *
- * Declare a variable named "earths_water_composition"
- * and assign the value of earths_water_composition to 0.71
- *
- */
+var earths_water_composition = 0.71;
+
+var club_name = 'Fight Club';
 
 
-/* Step 8
- *
- * Declare a variable named "club_name"
- * and assign the value of club_name to "Fight Club"
- *
- */
+var gender = {
+  female : 'female',
+  male : 'male',
+  unknown : undefined
+}
 
 
-/* Step 9
- *
- * Define a literal object named "gender"
- * with properties and values set to:
- *
- *   female  => "female"
- *   male    => "male"
- *   unknown => undefined
- */
+var princess_leia = {
+  name : 'Leia Organa',
+  money : 890,
+  age : 20,
+  gender : gender.female
+}
 
 
-/* Step 10
- *
- *
- * Define a literal object named "princess_leia"
- * with properties and values set to:
- *
- *   name    => "Leia Organa"
- *   money   => 890
- *   age     => 20
- *   gender  => gender.female
- *
- */
+
+var domains = {
+  'ycombinator.com' : '198.41.190.47',
+  'laughingsquid.com' : '162.159.247.97',
+  'slumlordhosting.com' : "198.61.179.126",
+  'jsonformatter.curiousconcept.com' : "104.28.5.70"
+}
 
 
-/* Step 11
- *
- * Define a literal object named "domains"
- * with properties and values set to:
- *
- *   ycombinator.com                  => "198.41.190.47"
- *   laughingsquid.com                => "162.159.247.97"
- *   slumlordhosting.com              => "198.61.179.126"
- *   jsonformatter.curiousconcept.com => "104.28.5.70"
- *
- */
+var browsers = {
+  Chromium : 'google.com',
+  Safari : 'apple.com',
+  Opera : 'opera.com',
+  Firefox : 'mozilla.org',
+  Sleipnir : 'fenrir-inc.com',
+  Konqueror : 'konqueror.org'
+}
 
 
-/* Step 12
- *
- * Define a literal object named "browsers"
- * with properties and values set to:
- *
- *   Chromium   => "google.com"
- *   Safari     => "apple.com"
- *   Opera      => "opera.com"
- *   Firefox    => "mozilla.org"
- *   Sleipnir   => "fenrir-inc.com"
- *   Konqueror  => "konqueror.org"
- *
- */
+
+var rainbow = {
+  colors : {
+    red : '#F0280A',
+    orange : '#FF8800',
+    yellow : '#FFDD00',
+    green : '#51AB0C',
+    blue : '#1593ED',
+    indigo : '#5215ED',
+    violet : '#A915ED'
+  },
+  isDouble : true
+};
 
 
-/* Step 13
- *
- * Define a literal object named "rainbow"
- * with properties and values set to:
- *
- *  colors    => [LITERAL OBJECT]
- *                  red       => "#F0280A"
- *                  orange    => "#FF8800"
- *                  yellow    => "#FFDD00"
- *                  green     => "#51AB0C"
- *                  blue      => "#1593ED"
- *                  indigo    => "#5215ED"
- *                  violet    => "#A915ED"
- *  isDouble  => true
- *
- */
+
+var linuxFlavors = ['Gentoo', 'Fedora', 'Debian', 'Slackware', 'Red Hat', 'Bieber Linux'];
 
 
-/* Step 14
- *
- * Declare an array named "linuxFlavors"
- * with the following values:
- *
- * "Gentoo"
- * "Fedora"
- * "Debian"
- * "Slackware"
- * "Red Hat"
- * "Bieber Linux"
- *
- */
+
+var DNA = ['nucleatides', 'guanine', 'adenine', 'thymine', 'cytosine'];
+
+var laptopCosts = {
+  MacBook : 1500,
+  Alienware : 2500,
+  HP : 499,
+  Surface : 320
+};
+
+var livingOrganismClassification = ['Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus', 'Species'];
 
 
-/* Step 15
- *
- * Declare an array named "DNA" with the
- * following values:
- *
- * "nucleatides"
- * "guanine"
- * "adenine"
- * "thymine"
- * "cytosine"
- *
- */
+var scmList = ['git', 'svn', 'mercurial', 'bazaar', 'cvs'];
 
 
-/* Step 16
- *
- * Define a literal object named "laptopCosts"
- * with properties and values set to:
- *
- * MacBook      => 1500
- * Alienware    => 2500
- * HP           => 499
- * Surface      => 320
- *
- */
+
+var beers = {
+  IPA : 'Ale',
+  Lager : 'Strong',
+  Heffeweisen : 'German',
+  Stout : ['Thick', 'Dark'],
+  Porter : 'Bitter',
+  Ale : ['Light', 'Golden']
+};
 
 
-/* Step 17
- *
- * Declare an array named "livingOrganismClassification"
- * with the following values:
- *
- * "Kingdom"
- * "Phylum"
- * "Class"
- * "Order"
- * "Family"
- * "Genus"
- * "Species"
- *
- */
+
+var sahara_river = function(){
+  return 'Nile River';};
 
 
-/* Step 18
- *
- * Declare an array named "scmList" with
- * the following values:
- *
- * "git"
- * "svn"
- * "mercurial"
- * "bazaar"
- * "cvs"
- *
- */
+
+var addNumbers = function(a,b){
+  return a+b;};
+
+var installLinux = function(string){
+  if(linuxFlavors.indexOf(string) >= 0){
+    return true;
+  } else return false;
+}
+
+var drink = function(beer){
+  if(beers.hasOwnProperty(beer)){
+    if(Array.isArray(beers[beer])){
+      return 'This ' + beer +' is '+ beers[beer][0]+ ' and '+beers[beer][1]+'.';
+    } else return 'This ' + beer +' is '+ beers[beer]+'.';
+  } else return false;
+};
+
+var browseURL = function(value){
+  if(!browsers.hasOwnProperty(value)){
+    return false;
+  } else {
+    return browsers[value];
+  }
+}
+
+var listLivingOrgClass = function(){
+  var result = '<ul>';
+  for (var i = 0; i < livingOrganismClassification.length; i++) {
+    result += '<li>'+livingOrganismClassification[i]+'</li>';
+  };
+  return result+'</ul>';
+}
+
+var favoritePlanet = function(planet){
+  if(planets.indexOf(planet) < 0){
+    return planet+' is not a planet!';
+  } else {
+    var taskComplete = false;
+    while(!taskComplete){
+      var randomNumber = Math.floor(Math.random()*8);
+      if(randomNumber !== planets.indexOf(planet)){
+        taskComplete = true;
+        return "I'm from "+planet+', but I wish I could go to '+ planets[randomNumber]+'.'
+      }
+    }
+  }
+}
 
 
-/* Step 19
- *
- * Define a literal object named "beers" with
- * properties and values set to:
- *
- * IPA          => "Ale"
- * Lager        => "Strong"
- * Heffeweisen  => "German"
- * Stout        => [Array]
- *                  "Thick"
- *                  "Dark"
- * Porter       => "Bitter"
- * Ale          => [Array]
- *                  "Light"
- *                  "Golden"
- *
- */
-
-
-/* Step 20
- *
- * Define a function named 'sahara_river'
- * that returns the string 'Nile River'
- *
- * @return {String}
- *
- */
-
-
-/* Step 21
- *
- * Define a function named "addNumbers"
- * that returns the sum of two numbers
- *
- * @param {Number}
- * @param {Number}
- * @return {Number}
- *
- */
-
-
-/* Step 22
- *
- * Define a function named "installLinux"
- * that takes a type of Linux as a parameter,
- * checks if it exists in "linuxFlavors" and
- * returns success or failure
- *
- * @param {String}
- * @return {Bool}
- *
- */
-
-
-/* Step 23
- *
- * Define a function named "drink" that takes
- * a type of beer as a paramater. If it is not
- * a valid type of beer as defined in "beers",
- * return false. If it is valid, return the following phrases:
- *
- * "This {beerName} is {beerDescription}."
- *
- * Or, if there are multiple descriptions:
- *
- * "This {beerName is {beerDescription1} and {beerDescription2} and..."
- *
- * @param {String}
- * @return {Bool when False, String when True}
- *
- */
-
-
-/* Step 24
- *
- * Define a function named "browseURL" that takes
- * a browser and validates it, as defined by "browsers"
- * If the browser doesn't exist, return false.
- * If the browser exists, return the value which is a partial URL.
- *
- * @param {String}
- * @return {String if true else return false}
- *
- */
-
-
-/* Step 25
- *
- * Define a function named "listLivingOrgClass" that
- * returns an HTML-formatted unordered list (<ul>) of all
- * living organism classifications as an list element(<li>)
- *
- * @return {String}
- *
- */
-
-
-/* Step 26
- *
- * Define a function named "favoritePlanet" that
- * takes in the person's current planet and validates
- * that the planet exists. If it doesn't, return the
- * following message:
- *
- * "{currentPlanet} is not a planet!"
- *
- * If the planet does exist, select a different, random
- * planet from the "planets" variable. Once selected,
- * return the following message:
- *
- * "I'm from {currentPlanet}, but I wish I could go to {randomPlanet}."
- *
- * @param {String}
- * @return {String}
- *
- */
 
 
 /* Step 27
