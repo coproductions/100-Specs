@@ -161,8 +161,18 @@ var favoritePlanet = function(planet){
     }
   }
 }
-
-
+var Person = function(name, money, age , gender){
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender;
+}
+Person.prototype.spendMoney = function(amount){
+    this.money -= amount;
+}
+Person.prototype.earnMoney = function(amount){
+    this.money += amount;
+}
 
 
 /* Step 27
