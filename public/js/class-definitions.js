@@ -172,179 +172,122 @@ Person.prototype.spendMoney = function(amount){
 }
 Person.prototype.earnMoney = function(amount){
     this.money += amount;
+};
+
+var purchaseLaptop = function(laptop){
+  if(laptopCosts.hasOwnProperty(laptop)){
+    return laptopCosts[laptop].toString();
+  } else return -1;
+};
+
+var canTalkAbout = function(club){
+  if(club !== club_name){
+    return true;
+  } else return false;
 }
 
 
-/* Step 27
- *
- * Define a class named "Person" that has properties for
- * "name," "money," "age," and "gender." Pass values for
- * all these properies in the constructor. Create methods
- * named "spendMoney" and "earnMoney" that each take an
- * amount of money and add or subtract them to this
- * person's money.
- *
- * class
- *   Person
- * properties
- *   @param {String} name
- *   @param {String} money
- *   @param {String} age
- *   @param {String} gender
- *
- * methods
- *   spendMoney
- *   earnMoney
- *
- */
+var Pen = function(color){
+  this.color = color;
+};
+
+Pen.prototype.write = function(message){
+  return this.color+':'+' '+message;
+}
+
+var Garden = function(plantsTotal){
+  this.plantsTotal = plantsTotal;
+  this.isWatered = false;
+};
+Garden.prototype.water = function(){
+  this.isWatered = true;
+}
+Garden.prototype.grow = function(){
+  if(this.isWatered){
+    this.plantsTotal += 1;
+    this.isWatered = false;
+  } else return false;
+}
+
+var SolarSystem = function(){
+  this.planets = [];
+};
+SolarSystem.prototype.addPlanet = function(planet){
+  this.planets.push(planet);
+};
+SolarSystem.prototype.removePlanet = function() {
+  this.planets.pop();
+};
+
+var PrincessLeia = function(name,money,age,gender){
+  Person.call(this,name,money,age,gender);
+  this.isInTrouble = null;
+};
+
+PrincessLeia.prototype = Object.create(Person.prototype,{constructor: {value : Person}});
+
+PrincessLeia.prototype.shootsGun = function(){
+  this.isInTrouble = false;
+  return 'Leia shoots her gun wildly';
+};
+
+PrincessLeia.prototype.getsInTrouble = function() {
+  this.isInTrouble = true;
+  return "Help me Obi-wan Kenobi, you're my only hope";
+};
+
+PrincessLeia.prototype.marries = function(interest) {
+  if(interest === 'Han Solo'){
+    return true;
+  } else if(interest === 'Luke Skywalker'){
+    return 'Gross!';
+  } else return false;
+};
 
 
-/* Step 28
- *
- * Define a function named "purchaseLaptop" that takes
- * a laptop as a parameter. If the laptop is valid as
- * defined in "laptopCosts" then return the cost as a string. Otherwise,
- * return -1
- *
- * @param {String}
- * @return {String}
- *
- */
+var Stapler = function(color, maxPapers){
+  this.color = color;
+  this.maxPapers = maxPapers;
+};
 
+Stapler.prototype.staplePapers = function(number) {
+  if(number <= this.maxPapers){
+    return true;
+  } else return false;
+};
 
-/* Step 29
- *
- * Define a function named "canTalkAbout" that takes
- * a club as a parameter. Return true if you can
- * talk about the club and false if the club passed
- * in has the same value as "club_name"
- *
- * @param {String}
- * @return {Bool}
- *
- */
+var Scientist = function(name,money,age,gender){
+  Person.call(this,name,money,age,gender);
+  this.disciplines = [];
+  this.discoveries = [];
+}
 
+Scientist.prototype = Object.create(Person.prototype,{constructor : {value : Person}})
 
-/* Step 30
- *
- * Define a class named "Pen" with a property for
- * color and a class method named "write" that takes
- * a message string as a parameter and returns the
- * string back with the pen's color added to the
- * beginning of the string
- *
- * example: "{color}: {Message passed in}"
- *
- * class
- *   Pen
- *
- * properties
- *   @param {String} color
- *
- * methods
- *   write
- *
- */
+Scientist.prototype.addDiscipline = function(discipline) {
+  this.disciplines.push(discipline);
+  return discipline;
+};
 
+Scientist.prototype.checkDiscipline = function(discipline) {
+  if(this.disciplines.indexOf(discipline) >= 0){
+    return true;
+  } else return false;
+};
 
-/* Step 31
- *
- * Define a class named "Garden" with a property for
- * the number of plants and whether it was recently
- * watered.
- *
- * Define a class method named "water" which
- * sets the recently watered property to true
- *
- * Defined a class method named "grow" which adds a plant to
- * the garden if it was recently watered and exhausts the water.
- * If this method is called and the 'isWatered' property is
- * false, it should return false;
- *
- * class
- *   Garden
- *
- * properties
- *   @param {Number} plantsTotal
- *   @property {Bool:Not Passed as Argument - Default Value FALSE} isWatered
- *
- * methods
- *   water
- *   grow
- *
- */
-
-
-/* Step 32
- *
- * Define a class named "SolarSystem" with a property
- * "planets" that is initialized as an empty array. Add
- * a method "addPlanet" that adds a planet to the list
- * and a method "removePlanet" that removes a planet.
- *
- * class
- *   SolarSystem
- * properties
- *   planets
- * methods
- *   addPlanet
- *   removePlanet
- *
- */
-
-
-/* Step 33
- *
- * Define a class named "PrincessLeia" that is a subclass of "Person"
- * with properties "name," "money," "age," "gender," and
- * "isInTrouble"(initialized as null)
- *
- * Add a method "shootsGun" that returns a message
- * "Leia shoots her gun wildly"
- * and sets the isInTrouble property to FALSE
- *
- * Add a method "getsInTrouble" that returns a message
- * "Help me Obi-wan Kenobi, you're my only hope"
- * and sets the property 'isInTroube' to TRUE
- *
- * Add a method "marries" that takes a prospective
- * love interest and returns true for "Han Solo" or false for anyone
- * else.
- *
- * In the 'marries' method - Add a message of disapproval for "Luke Skywalker"
- * "Gross!"
- *
- *
- * class
- *   PrincessLeia
- * properties
- *   isInTrouble
- * methods
- *   shootsGun
- *   getsInTrouble
- *   marries
- *
- */
-
-
-/* Step 34
- *
- * Define a class named "Stapler" with properties "color"
- * and "maxPapers". Add a method "staplePapers" that accepts a
- * number of papers as a parameter and returns true if the
- * papers are less than or equal to the papers and false
- * if there are too many papers to staple.
- *
- * class
- *   Stapler
- * properties
- *   color
- *   maxPapers
- * methods
- *   staplePapers
- *
- */
-
+Scientist.prototype.addDiscovery = function(discovery) {
+  this.discoveries.push(discovery);
+  var returnString = 'I discovered '+ this.discoveries[0];
+  if(this.discoveries.length > 2){
+    for (var i = 1; i < this.discoveries.length -1; i++) {
+      returnString += ', '+this.discoveries[i];
+    };
+    returnString += ', and '+this.discoveries[this.discoveries.length -1];
+  } else if(this.discoveries.length === 2){
+      returnString += ' and '+this.discoveries[1];
+  }
+  return returnString+'.';
+};
 
 /* Step 35
  *
@@ -579,6 +522,19 @@ Person.prototype.earnMoney = function(amount){
  * @param {string} species The animal species
  * @param {string} gender  male or female
  */
+
+
+var Animal = function(species, gender){
+  this.species = species;
+  this.gender = gender;
+};
+
+var Vehicle = function(make, model){
+  this.make = make;
+  this.model = model;
+};
+
+
 
 
 /**
