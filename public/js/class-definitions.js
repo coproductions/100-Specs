@@ -535,84 +535,45 @@ var Vehicle = function(make, model){
 };
 
 
+var Shape = function(sides){
+  if(sides >= 3){
+    this.sides = sides;
+  } else this.sides = null;
+};
+
+var Box = function(contents, isOpen){
+  this.contents = contents;
+  this.isOpen = isOpen;
+
+};
+
+var Door = function(isOpen){
+  this.isOpen = isOpen;
+};
+
+var Shoe = function(size, color){
+  this.size = size;
+  this.color = color;
+};
+
+var House = function(stories){
+  this.stories = stories;
+};
+
+var Lightbulb = function(isOn){
+  this.isOn = isOn;
+};
+
+var Cookie = function(flavor){
+  this.flavor = flavor;
+};
+
+var Meal = function(foods){
+  this.foods = foods;
+};
 
 
-/**
- * Step 51
- *
- * Vehicle class
- * @param {string} make The vehicle's make
- * @param {string} model The vehicle's model
- */
 
-
-/**
- * Step 52
- *
- * Shape class
- * @param {number} sides The number of sides, should be a number
- * greater or equal to 3, if the number is less than 3 then set the
- * value of the sides property to null.
- *
- */
-
-
-/**
- * Step 53
- *
- * Box class
- * @param {anything} contents The contents of the box
- * @param {boolean} isOpen     Whether the box is opened or closed
- */
-
-
-/**
- * Step 54
- *
- * Door class
- * @param {boolean} isOpen Whether the door is opened or closed
- */
-
-
-/**
- * Step 55
- *
- * Shoe class
- * @param {number} size  The shoe size
- * @param {string} color The shoe color
- */
-
-
-/**
- * Step 56
- *
- * House class
- * @param {number} stories How many stories tall the house is
- */
-
-
-/**
- * Step 57
- *
- * Lightbulb class
- * @param {boolean} isOn Whether the light is on or off
- */
-
-
-/**
- * Step 58
- *
- * Cookie class
- * @param {string} flavor The cookie's flavor
- */
-
-
-/**
- * Step 59
- *
- * Meal class
- * @param {Array} foods All the foods in the meal
- */
 
 
 /**
@@ -622,16 +583,16 @@ var Vehicle = function(make, model){
 
 
 // Create 2 different species of animals
-var george;
-var nemo;
+var george = new Animal('Monkey', 'male');
+var nemo = new Animal('Fish', 'male');
 
 // Create 2 different vehicles
-var civic;
-var forte;
+var civic = new Vehicle('Honda','Civic');
+var forte = new Vehicle('KIA','Forte');
 
 // Create 2 shapes with different numbers of sides
-var square;
-var hexagon;
+var square = new Shape(4);
+var hexagon = new Shape(6);
 
 // Create 2 boxes
 var catBox;
